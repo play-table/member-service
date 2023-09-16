@@ -6,9 +6,6 @@ import com.playtable.member.domain.entity.Role;
 import java.util.UUID;
 
 public record JoinRequest(
-        String id,
-        String username,
-        String email,
         String realName,
         String contact,
         String role,
@@ -16,9 +13,9 @@ public record JoinRequest(
         String profileImage
 ) {
 
-    public Member toEntity(){
+    public Member toEntity(UUID id, String username, String email){
         return Member.builder()
-                .id(UUID.fromString(id))
+                .id(id)
                 .username(username)
                 .email(email)
                 .realName(realName)

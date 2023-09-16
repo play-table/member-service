@@ -1,6 +1,8 @@
 package com.playtable.member.domain.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import lombok.*;
 
@@ -19,6 +21,7 @@ public class Member {
 
     private String realName;
     private String contact;
+    @Enumerated(EnumType.STRING)
     private Role role;
     private String nickName;
     private String profileImage;
