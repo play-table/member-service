@@ -60,7 +60,7 @@ public class MemberService {
 
     private String getRedirect(Member member){
         return switch (member.getRole()){
-            case CUSTOMER -> "/main";
+            case CUSTOMER -> "/";
             case OWNER -> "/owner";
             default -> "/signup";
         };

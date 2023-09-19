@@ -17,7 +17,8 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    @GetMapping("/check")
+    @PostMapping("/check")
+    @ResponseStatus(HttpStatus.CREATED)
     public AuthResponse check(@RequestBody AuthRequest authRequest){
         return memberService.check(authRequest);
     }
